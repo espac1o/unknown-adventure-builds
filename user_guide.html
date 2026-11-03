@@ -189,21 +189,25 @@ Launching Unknown Adventure 0.1.0</pre></div>
   <!-- ===================== WINDOWS ===================== -->
   <section data-device="windows">
     <h2 data-i18n="win_h">Windows</h2>
-    <p data-i18n="win_sub" class="sub">64-bit. There is no installer for Windows yet; you download and unzip a build.</p>
+    <p data-i18n="win_sub" class="sub">Windows 10 or 11, 64-bit. One command installs the game, adds a Start menu entry, and keeps it up to date.</p>
 
     <div class="card">
       <h3 data-i18n="win_c1_h">Install</h3>
       <ol class="steps">
-        <li data-i18n="win_s1">Open the <a href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">latest release page</a>.</li>
-        <li data-i18n="win_s2">Under <b>Assets</b>, download <code>UnknownAdventure-&lt;version&gt;-windows.zip</code>.</li>
-        <li data-i18n="win_s3">Unzip it into a folder of your choice and run <code>UnknownAdventure.exe</code>.</li>
+        <li data-i18n="win_s1">Press the <b>Windows</b> key, type <b>PowerShell</b> and press Enter.</li>
+        <li><span data-i18n="win_s2">Paste this line and press Enter:</span>
+          <div class="cmd"><pre>irm https://github.com/espac1o/unknown-adventure-builds/releases/latest/download/install.ps1 | iex</pre><button class="copy" type="button" data-i18n="copy">Copy</button></div>
+        </li>
+        <li data-i18n="win_s3">A small menu appears. Press <b>Enter</b> to install the newest version and start the game.</li>
       </ol>
-      <div class="warn"><p data-i18n="win_warn">Windows may show <b>“Windows protected your PC”</b> because the game isn't signed yet. This is a test build: if you trust the source, choose <b>More info</b>, then <b>Run anyway</b>.</p></div>
+      <p data-i18n="win_alt" class="sub">Prefer a file? Download <code>UnknownAdventure-installer.cmd</code> from the <a href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">latest release page</a> (under <b>Assets</b>) and double-click it. Windows may show <b>“Windows protected your PC”</b> because the file came from a browser: choose <b>More info</b>, then <b>Run anyway</b>. The one-line command above does not trigger that warning.</p>
     </div>
 
     <div class="card">
-      <h3 data-i18n="win_c2_h">Update or change the version</h3>
-      <p data-i18n="win_c2_p">Download the zip for the version you want from the <a href="https://github.com/espac1o/unknown-adventure-builds/releases">Releases page</a> (pick a version, use its <b>Assets</b> list), unzip it into a <b>new folder</b>, and run it from there. You can keep several versions side by side and delete old folders yourself.</p>
+      <h3 data-i18n="win_c2_h">Next time, and updates</h3>
+      <p data-i18n="win_c2_p">Press the <b>Windows</b> key and type <b>Unknown Adventure</b>. The launcher checks for a new version, installs it if there is one, and starts the game; offline, it starts the version you have. In the menu, <b>o</b> installs another version and <b>r</b> goes back to the previous one.</p>
+      <p data-i18n="win_zip" class="caption">The old way still works: download <code>UnknownAdventure-&lt;version&gt;-windows.zip</code> from a release, unzip it into a new folder and run <code>UnknownAdventure.exe</code>.</p>
+      <div class="note"><p data-i18n="win_new">The Windows launcher is new and has not been tried on many PCs yet. If something fails, send the message it shows, and the zip is always a fallback.</p></div>
     </div>
   </section>
 
@@ -240,7 +244,7 @@ Launching Unknown Adventure 0.1.0</pre></div>
         <tr data-device="mac"><td data-i18n="where_launch">Launcher</td><td><code>~/Applications/Unknown Adventure.app</code></td></tr>
         <tr data-device="deck"><td data-i18n="where_inst">Installed game</td><td><code>~/.local/share/UnknownAdventure</code></td></tr>
         <tr data-device="deck"><td data-i18n="where_launch">Launcher</td><td><code>~/.local/share/applications/unknown-adventure.desktop</code></td></tr>
-        <tr data-device="windows"><td data-i18n="where_inst">Installed game</td><td data-i18n="where_win_folder">the folder you unzipped it into</td></tr>
+        <tr data-device="windows"><td data-i18n="where_inst">Installed game</td><td data-i18n="where_win_folder"><code>%LOCALAPPDATA%\UnknownAdventure</code> (the launcher's install folder)</td></tr>
       </table>
       <p data-i18n="where_p" data-device="mac deck">Your saves and settings are stored separately by the game, so updating or switching versions never touches them. <b>To remove the game,</b> delete the installed-game folder above and the launcher.</p>
     </div>
@@ -327,14 +331,16 @@ window.UA_RU = {
     deck_c3_p2: `Или напрямую:`,
     deck_warn: `Ярлык в игровом режиме всегда переходит на самую новую версию. Если для теста вы выбрали старую версию, запускайте игру из режима рабочего стола (пункт в меню приложений или меню выше, клавиша <code>p</code>).`,
     win_h: `Windows`,
-    win_sub: `64-бит. Установщика для Windows пока нет: сборку нужно скачать и распаковать.`,
+    win_sub: `Windows 10 или 11, 64-бит. Одна команда устанавливает игру, добавляет пункт в меню «Пуск» и поддерживает её актуальной.`,
     win_c1_h: `Установка`,
-    win_s1: `Откройте <a href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">страницу последнего релиза</a>.`,
-    win_s2: `В разделе <b>Assets</b> скачайте <code>UnknownAdventure-&lt;версия&gt;-windows.zip</code>.`,
-    win_s3: `Распакуйте архив в любую папку и запустите <code>UnknownAdventure.exe</code>.`,
-    win_warn: `Windows может показать <b>«Windows защитила ваш компьютер»</b>, потому что игра пока не подписана. Это тестовая сборка: если вы доверяете источнику, нажмите <b>Подробнее</b>, затем <b>Выполнить в любом случае</b>.`,
-    win_c2_h: `Обновление и смена версии`,
-    win_c2_p: `Скачайте архив нужной версии со <a href="https://github.com/espac1o/unknown-adventure-builds/releases">страницы релизов</a> (выберите версию и откройте список <b>Assets</b>), распакуйте его в <b>новую папку</b> и запускайте оттуда. Несколько версий могут лежать рядом; старые папки удаляйте сами.`,
+    win_alt: `Хотите файл? Скачайте <code>UnknownAdventure-installer.cmd</code> со <a href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">страницы последнего релиза</a> (в разделе <b>Assets</b>) и дважды щёлкните по нему. Windows может показать <b>«Windows защитила ваш компьютер»</b>, потому что файл скачан браузером: выберите <b>Подробнее</b>, затем <b>Выполнить в любом случае</b>. Команда из одной строки выше это предупреждение не вызывает.`,
+    win_zip: `Старый способ тоже работает: скачайте <code>UnknownAdventure-&lt;версия&gt;-windows.zip</code> из релиза, распакуйте в новую папку и запустите <code>UnknownAdventure.exe</code>.`,
+    win_new: `Лаунчер для Windows новый и пока проверен на малом числе компьютеров. Если что-то не работает, пришлите сообщение, которое он показал; zip всегда остаётся запасным вариантом.`,
+    win_s1: `Нажмите клавишу <b>Windows</b>, введите <b>PowerShell</b> и нажмите Enter.`,
+    win_s2: `Вставьте эту строку и нажмите Enter:`,
+    win_s3: `Появится небольшое меню. Нажмите <b>Enter</b>, чтобы установить новейшую версию и запустить игру.`,
+    win_c2_h: `В следующий раз и обновления`,
+    win_c2_p: `Нажмите клавишу <b>Windows</b> и введите <b>Unknown Adventure</b>. Лаунчер проверит новую версию, установит её, если она есть, и запустит игру; без интернета он запустит ту версию, что у вас есть. В меню <b>o</b> ставит другую версию, а <b>r</b> возвращает предыдущую.`,
     tog_h: `Игра вместе`,
     tog_sub: `На стартовом экране есть кнопки <b>Solo</b>, <b>Host</b>, <b>Server</b> и <b>Join</b>. Верхняя кнопка показывает состояние подключения: нажмите на неё, чтобы скрыть или показать панель.`,
     fig1_alt: `Стартовый экран: кнопка состояния, кнопки Solo, Host и Server, поле Join со списком недавних хостов и блок с управлением внизу слева`,
@@ -352,7 +358,7 @@ window.UA_RU = {
     where_h: `Где что лежит`,
     where_inst: `Установленная игра`,
     where_launch: `Лаунчер`,
-    where_win_folder: `папка, в которую вы распаковали архив`,
+    where_win_folder: `<code>%LOCALAPPDATA%\\UnknownAdventure</code> (папка установки лаунчера)`,
     where_p: `Сохранения и настройки игра хранит отдельно, поэтому обновление и смена версии их не затрагивают. <b>Чтобы удалить игру,</b> удалите папку с установленной игрой и лаунчер.`,
     help_h: `Если что-то пошло не так`,
     h1_s: `«needs an Apple Silicon Mac» (нужен Mac на Apple Silicon)`,
