@@ -2,6 +2,8 @@
 
 Public test builds of Unknown Adventure. The game source is private; this repository only hosts releases.
 
+**Step-by-step guide with screenshots (Mac, Steam Deck, Windows): https://espac1o.github.io/unknown-adventure-builds/**
+
 ## Install
 
 **macOS (Apple Silicon) and Linux / Steam Deck** (desktop mode): open Terminal and run
