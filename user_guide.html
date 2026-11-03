@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unknown Adventure: user guide</title>
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-selected="none">
+
+<nav class="topnav" aria-label="Site"><div class="wrap">
+  <a class="brand" href="index.html" data-nav>Unknown Adventure</a>
+  <div class="links">
+    <a href="index.html" data-nav data-i18n="nav_overview">Overview</a>
+    <a href="user_guide.html" data-nav data-i18n="nav_guide">User guide</a>
+    <a href="mechanics.html" data-nav data-i18n="nav_mechanics">Mechanics</a>
+    <a href="versions.html" data-nav data-i18n="nav_versions">Versions</a>
+  </div>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ru" aria-pressed="false">RU</button></div>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p data-i18n="hero_kicker" class="kicker">Playtest guide</p>
+    <h1>Unknown Adventure</h1>
+    <p data-i18n="hero_lead" class="lead">Install the game, start it, keep it up to date, and switch versions. Pick your device and follow just that part.</p>
+    <p class="meta" style="display:none" id="latestLine"><span data-i18n="latest_label">Latest version:</span> <a class="badge" id="latest" href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">…</a></p>
+    <div class="picker" role="group" aria-label="Choose your device">
+      <button type="button" data-pick="mac" aria-pressed="false">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="9" width="32" height="22" rx="3"/><path d="M3 38h42"/><path d="M19 38h10"/></svg>
+        <b>Mac</b><small>Apple Silicon</small>
+      </button>
+      <button type="button" data-pick="deck" aria-pressed="false">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="13" width="42" height="22" rx="8"/><circle cx="14" cy="24" r="3"/><path d="M33 20v8M29 24h8"/></svg>
+        <b>Steam Deck</b><small data-i18n="pick_deck_small">and Linux PCs</small>
+      </button>
+      <button type="button" data-pick="windows" aria-pressed="false">
+        <svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="17" height="17" rx="2"/><rect x="25" y="6" width="17" height="17" rx="2"/><rect x="6" y="25" width="17" height="17" rx="2"/><rect x="25" y="25" width="17" height="17" rx="2"/></svg>
+        <b>Windows</b><small data-i18n="pick_win_small">64-bit</small>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="prompt" class="card">
+    <h2 data-i18n="prompt_h">Pick your device above</h2>
+    <p data-i18n="prompt_sub" class="sub">The steps differ for Mac, Steam Deck / Linux, and Windows.</p>
+  </section>
+
+  <div class="note" data-device="mac deck windows" style="margin-top:0">
+    <p data-i18n="same_version"><b>Everyone playing together must be on exactly the same version.</b> If the versions differ, the host refuses the connection and tells you which versions don't match.</p>
+  </div>
+
+  <!-- ===================== MAC ===================== -->
+  <section data-device="mac">
+    <h2 data-i18n="mac_h">Mac (Apple Silicon)</h2>
+    <p data-i18n="mac_sub" class="sub">M1 or newer. Intel Macs are not supported.</p>
+
+    <div class="card">
+      <h3 data-i18n="mac_c1_h">1 · First install</h3>
+      <ol class="steps">
+        <li data-i18n="mac_s1">Open <b>Terminal</b>: press <b>⌘ Space</b>, type <i>Terminal</i>, press Enter.</li>
+        <li><span data-i18n="mac_s2">Paste this line and press Enter:</span>
+          <div class="cmd"><pre>curl -fsSL https://github.com/espac1o/unknown-adventure-builds/releases/latest/download/install.sh | bash</pre><button class="copy" type="button" data-i18n="copy">Copy</button></div>
+        </li>
+        <li data-i18n="mac_s3">A small menu appears. Press <b>Enter</b>. The game installs and starts.</li>
+      </ol>
+      <div class="term"><div class="bar"><i></i><i></i><i></i><span data-i18n="term_cap_mac">Terminal — what you'll see</span></div><pre><span class="dim">=== Unknown Adventure ===</span>
+  Installed: nothing yet
+  Latest:    0.1.0
+
+  <span class="k">[Enter]</span>  Install 0.1.0 and play
+  <span class="k">o</span>        Install another version
+  <span class="k">s</span>        Show install folder
+  <span class="k">q</span>        Quit
+
+<span class="p">&gt;</span> <span class="dim">(press Enter)</span>
+Installing 0.1.0 (was: nothing)
+<span class="ok">Now on version 0.1.0.</span>
+Launcher: ~/Applications/Unknown Adventure.app
+Launching Unknown Adventure 0.1.0</pre></div>
+      <p class="caption ru-only">Меню установщика выводится на английском — так оно выглядит и у вас на экране.</p>
+      <details>
+        <summary data-i18n="mac_dbl_sum">Prefer double-clicking instead of Terminal?</summary>
+        <p data-i18n="mac_dbl_p">Download <code>UnknownAdventure-installer-macos.zip</code> from the <a href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">latest release</a>, unzip it, and open <code>UnknownAdventure.command</code>. The first time, macOS asks for confirmation because the file came from a browser: right-click it, choose <b>Open</b>, then <b>Open</b> again.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="mac_c2_h">2 · Start it later</h3>
+      <p data-i18n="mac_c2_p">The installer created a launcher called <b>Unknown Adventure</b> in your <code>Applications</code> folder. Press <b>⌘ Space</b>, type its name, press Enter. A Terminal window opens with the menu; press <b>Enter</b> again. This checks for a new version, installs it if there is one, and starts the game.</p>
+      <div class="illus"><p class="label" data-i18n="illus_label">Illustration</p>
+        <div class="spot"><div class="search">🔍 <span>Unknown Adventure</span></div><div class="row"><span class="icon"></span><span>Unknown Adventure <small data-i18n="spot_app">— Application</small></span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="c3_h">3 · Update or change the version</h3>
+      <p data-i18n="mac_c3_p1">Open the launcher and use the menu:</p>
+      <table class="keys">
+        <tr><td><code>Enter</code></td><td data-i18n="k_enter">update to the newest version and play</td></tr>
+        <tr><td><code>p</code></td><td data-i18n="k_p">play the installed version without checking for updates</td></tr>
+        <tr><td><code>o</code></td><td data-i18n="k_o">install a different version: it lists the available ones, then type one, for example <code>0.1.0</code></td></tr>
+        <tr><td><code>r</code></td><td data-i18n="k_r">go back to the previous version</td></tr>
+        <tr><td><code>s</code> / <code>q</code></td><td data-i18n="k_sq">show where the game is installed / quit</td></tr>
+      </table>
+      <p data-i18n="mac_c3_p2">Or straight from Terminal, without the menu:</p>
+      <div class="cmd"><pre>"$HOME/Library/Application Support/UnknownAdventure/UnknownAdventure.command" --version 0.1.0
+"$HOME/Library/Application Support/UnknownAdventure/UnknownAdventure.command" rollback</pre><button class="copy" type="button" data-i18n="copy">Copy</button></div>
+      <p data-i18n="mac_cap" class="caption">The two newest versions stay on disk, so going back is instant.</p>
+    </div>
+  </section>
+
+  <!-- ===================== DECK ===================== -->
+  <section data-device="deck">
+    <h2 data-i18n="deck_h">Steam Deck and Linux PCs</h2>
+    <p data-i18n="deck_sub" class="sub">64-bit Intel/AMD. On the Deck, do the install in Desktop Mode; after that you can launch from Gaming Mode.</p>
+
+    <div class="card">
+      <h3 data-i18n="deck_c1_h">1 · First install (Desktop Mode)</h3>
+      <ol class="steps">
+        <li data-i18n="deck_s1">Press the <b>Steam</b> button, choose <b>Power</b>, then <b>Switch to Desktop</b>.</li>
+        <li data-i18n="deck_s2">Open <b>Konsole</b> (the terminal) from the application menu.</li>
+        <li><span data-i18n="deck_s3">Paste this line and press Enter:</span>
+          <div class="cmd"><pre>curl -fsSL https://github.com/espac1o/unknown-adventure-builds/releases/latest/download/install.sh | bash</pre><button class="copy" type="button" data-i18n="copy">Copy</button></div>
+        </li>
+        <li data-i18n="deck_s4">Press <b>Enter</b> at the menu. The game installs and starts.</li>
+      </ol>
+      <div class="term"><div class="bar"><span data-i18n="term_cap_deck">Konsole — what you'll see</span></div><pre><span class="dim">=== Unknown Adventure ===</span>
+  Installed: nothing yet
+  Latest:    0.1.0
+
+  <span class="k">[Enter]</span>  Install 0.1.0 and play
+  <span class="k">o</span>        Install another version
+  <span class="k">q</span>        Quit
+
+<span class="p">&gt;</span> <span class="dim">(press Enter)</span>
+<span class="ok">Now on version 0.1.0.</span>
+Launcher: "Unknown Adventure" in your applications menu
+Launching Unknown Adventure 0.1.0</pre></div>
+      <p data-i18n="deck_menu_p">The installer adds an <b>Unknown Adventure</b> entry to the application menu (under Games).</p>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="deck_c2_h">2 · Start it from Gaming Mode</h3>
+      <p data-i18n="deck_c2_p">Add the launcher to Steam once, in Desktop Mode. Afterwards, choosing it in Gaming Mode updates the game when there is a newer version and then starts it. If the Deck is offline or an update fails, it simply starts the version you already have.</p>
+
+      <h3 data-i18n="deck_optA_h">Option A — the easy way</h3>
+      <p data-i18n="deck_optA_p">In <b>Steam</b>: <b>Games → Add a Non-Steam Game to My Library</b>, tick <b>Unknown Adventure</b>, press <b>Add Selected Programs</b>.</p>
+      <div class="illus"><p class="label" data-i18n="illus_label">Illustration</p>
+        <div class="dialog"><div data-i18n="dlg_title_a" class="title">Add a Non-Steam Game</div><div class="body">
+          <div class="item"><span class="box"></span> Discover</div>
+          <div class="item sel"><span class="box on">✓</span> <b>Unknown Adventure</b></div>
+          <div class="item"><span class="box"></span> Konsole</div>
+          <div><span data-i18n="dlg_btn_add" class="btn">Add Selected Programs</span></div>
+        </div></div>
+      </div>
+
+      <h3 data-i18n="deck_optB_h">Option B — if it isn't in the list</h3>
+      <ol class="steps">
+        <li data-i18n="deck_b1">In Steam choose <b>Games → Add a Non-Steam Game to My Library → Browse</b>.</li>
+        <li data-i18n="deck_b2">Set the file type to <b>All Files</b>, press <b>Ctrl+H</b> to show hidden folders, open <code>.local/share/UnknownAdventure</code> and pick <code>UnknownAdventure.command</code>. Press <b>Add Selected Programs</b>.</li>
+        <li data-i18n="deck_b3">In your library right-click the new entry, choose <b>Properties</b>, and set <b>Launch Options</b> to <code>play</code>.</li>
+      </ol>
+      <div class="illus"><p class="label" data-i18n="illus_label">Illustration</p>
+        <div class="dialog"><div data-i18n="dlg_title_b" class="title">Properties — UnknownAdventure.command</div><div class="body">
+          <div data-i18n="dlg_launch">LAUNCH OPTIONS</div><div class="field hl mono">play</div>
+        </div></div>
+      </div>
+      <p data-i18n="deck_back">Then use <b>Return to Gaming Mode</b> on the desktop. The game is in your library under <b>Non-Steam</b>.</p>
+      <div class="tip"><p data-i18n="deck_tip">Don't enable a Steam Play / Proton compatibility tool for it: the Linux build runs natively.</p></div>
+      <div class="note"><p data-i18n="deck_note">The current test menu is clicked with a mouse. If the sticks don't move the pointer, use the touchscreen or trackpads, or pick the <b>Keyboard (WASD) and Mouse</b> controller layout for the game.</p></div>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="c3_h">3 · Update or change the version</h3>
+      <p data-i18n="deck_c3_p1">In Desktop Mode open Konsole and run the launcher; you get the same menu as on the Mac (<code>o</code> install a specific version, <code>r</code> go back one version, <code>p</code> play without updating):</p>
+      <div class="cmd"><pre>~/.local/share/UnknownAdventure/UnknownAdventure.command</pre><button class="copy" type="button" data-i18n="copy">Copy</button></div>
+      <p data-i18n="deck_c3_p2">Or directly:</p>
+      <div class="cmd"><pre>~/.local/share/UnknownAdventure/UnknownAdventure.command --version 0.1.0
+~/.local/share/UnknownAdventure/UnknownAdventure.command rollback</pre><button class="copy" type="button" data-i18n="copy">Copy</button></div>
+      <div class="warn"><p data-i18n="deck_warn">The Gaming Mode shortcut always moves to the newest version. After choosing an older version for a test, start the game from Desktop Mode (the application-menu entry, or the menu above with <code>p</code>).</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== WINDOWS ===================== -->
+  <section data-device="windows">
+    <h2 data-i18n="win_h">Windows</h2>
+    <p data-i18n="win_sub" class="sub">64-bit. There is no installer for Windows yet; you download and unzip a build.</p>
+
+    <div class="card">
+      <h3 data-i18n="win_c1_h">Install</h3>
+      <ol class="steps">
+        <li data-i18n="win_s1">Open the <a href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">latest release page</a>.</li>
+        <li data-i18n="win_s2">Under <b>Assets</b>, download <code>UnknownAdventure-&lt;version&gt;-windows.zip</code>.</li>
+        <li data-i18n="win_s3">Unzip it into a folder of your choice and run <code>UnknownAdventure.exe</code>.</li>
+      </ol>
+      <div class="warn"><p data-i18n="win_warn">Windows may show <b>“Windows protected your PC”</b> because the game isn't signed yet. This is a test build: if you trust the source, choose <b>More info</b>, then <b>Run anyway</b>.</p></div>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="win_c2_h">Update or change the version</h3>
+      <p data-i18n="win_c2_p">Download the zip for the version you want from the <a href="https://github.com/espac1o/unknown-adventure-builds/releases">Releases page</a> (pick a version, use its <b>Assets</b> list), unzip it into a <b>new folder</b>, and run it from there. You can keep several versions side by side and delete old folders yourself.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PLAYING TOGETHER ===================== -->
+  <section id="together" data-device="mac deck windows">
+    <h2 data-i18n="tog_h">Playing together</h2>
+    <p data-i18n="tog_sub" class="sub">The start screen has three buttons: <b>Solo</b>, <b>Host</b> and <b>Join</b>.</p>
+    <div class="shots">
+      <figure><img data-i18n-alt="fig1_alt" alt="The start screen: the state button, Solo, Host and Server buttons, a Join field with the list of recent hosts, and the controls box at the bottom left" src="assets/img/menu_open.jpg"><figcaption data-i18n="fig1_cap"><b>Start screen</b> (click to enlarge). Solo plays alone, Host starts a session, Server runs one with no player of its own. Type an address and press Join; your recent hosts are listed below the field.</figcaption></figure>
+      <figure><img data-i18n-alt="fig2_alt" alt="Hosting: the list of your addresses with a Copy button each, and the button that looks up your public address" src="assets/img/hosting_panel.jpg"><figcaption data-i18n="fig2_cap"><b>Hosting.</b> Your addresses are listed with a Copy button each (these are example addresses). The state button at the top hides or shows this panel.</figcaption></figure>
+    </div>
+    <div class="card">
+      <ul>
+        <li data-i18n="tog_host"><b>Host:</b> the game lists your addresses under the buttons, each with a <b>Copy</b> button: a <b>VPN / virtual LAN</b> address (best for friends in different places), your <b>local network</b> address (for people on the same Wi-Fi or cable), and a button to look up your <b>public</b> address. Send one of them to your friends. Your computer must accept incoming <b>UDP</b> traffic on port <b>7770</b>; allow it if the firewall asks. A public address only works if your router forwards that port to your computer.</li>
+        <li data-i18n="tog_join"><b>Join:</b> type the host's IP address and press <b>Join</b>. The last three hosts you joined are listed under the field: click one to put it in the field, then press Join yourself; the <b>x</b> deletes an entry.</li>
+        <li data-i18n="tog_server"><b>Server:</b> runs a session with no player of its own (for a spare computer). Everyone, including you, then uses Join.</li>
+      </ul>
+            <p data-i18n="tog_controls"><b>In the arena:</b> the box at the bottom left always shows the controls and the state of the ball and the pulse. Move with <code>WASD</code> or the left stick. <code>E</code> (gamepad <b>A</b>) picks up or drops the gold ball: you must be close, and only one player can hold it; a dropped ball lands on the ground in front of you. <code>Q</code> (left shoulder) fires a pulse, with a one-second cooldown. Try grabbing the ball at the same moment as a friend: exactly one of you gets it.</p>
+      <p data-i18n="tog_fail">If joining fails you'll see why:</p>
+      <table>
+        <tr><td>Incompatible game version</td><td data-i18n="err1">you and the host are on different versions; one of you must change version</td></tr>
+        <tr><td>Could not reach the host</td><td data-i18n="err2">wrong address, host not started, or a firewall in the way</td></tr>
+        <tr><td>Could not start the server</td><td data-i18n="err3">the port is already in use (another copy of the game?)</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== WHERE THINGS ARE ===================== -->
+  <section id="where">
+    <h2 data-i18n="where_h">Where things are</h2>
+    <div class="card">
+      <table>
+        <tr data-device="mac"><td data-i18n="where_inst">Installed game</td><td><code>~/Library/Application Support/UnknownAdventure</code></td></tr>
+        <tr data-device="mac"><td data-i18n="where_launch">Launcher</td><td><code>~/Applications/Unknown Adventure.app</code></td></tr>
+        <tr data-device="deck"><td data-i18n="where_inst">Installed game</td><td><code>~/.local/share/UnknownAdventure</code></td></tr>
+        <tr data-device="deck"><td data-i18n="where_launch">Launcher</td><td><code>~/.local/share/applications/unknown-adventure.desktop</code></td></tr>
+        <tr data-device="windows"><td data-i18n="where_inst">Installed game</td><td data-i18n="where_win_folder">the folder you unzipped it into</td></tr>
+      </table>
+      <p data-i18n="where_p" data-device="mac deck">Your saves and settings are stored separately by the game, so updating or switching versions never touches them. <b>To remove the game,</b> delete the installed-game folder above and the launcher.</p>
+    </div>
+  </section>
+
+  <!-- ===================== HELP ===================== -->
+  <section id="help" data-device="mac deck windows">
+    <h2 data-i18n="help_h">If something goes wrong</h2>
+    <details data-device="mac"><summary data-i18n="h1_s">“needs an Apple Silicon Mac”</summary><p data-i18n="h1_p">The Mac build doesn't run on Intel Macs.</p></details>
+    <details data-device="mac deck"><summary data-i18n="h2_s">“Could not reach the update server”</summary><p data-i18n="h2_p">You are offline or GitHub is unreachable. The installer starts the version you already have.</p></details>
+    <details data-device="mac deck"><summary data-i18n="h3_s">A download fails or is rejected</summary><p data-i18n="h3_p">Nothing is changed; your installed version still works. Try again.</p></details>
+    <details data-device="mac"><summary data-i18n="h4_s">The Mac asks about incoming network connections</summary><p data-i18n="h4_p">That's the firewall asking about hosting a session. Allow it if you want others to join you.</p></details>
+    <details open><summary data-i18n="h5_s">Anything else: send the game's log</summary>
+      <p data-i18n="h5_p">Send the log file with a short description of what you did:</p>
+      <ul>
+        <li data-device="mac"><code>~/Library/Logs/DefaultCompany/UnknownAdventure/Player.log</code></li>
+        <li data-device="deck"><code>~/.config/unity3d/DefaultCompany/UnknownAdventure/Player.log</code></li>
+        <li data-device="windows"><code>%USERPROFILE%\AppData\LocalLow\DefaultCompany\UnknownAdventure\Player.log</code></li>
+      </ul>
+    </details>
+  </section>
+
+</main>
+
+<footer class="wrap"><span data-i18n="footer">Builds:</span> <a href="https://github.com/espac1o/unknown-adventure-builds/releases">github.com/espac1o/unknown-adventure-builds</a></footer>
+
+<script>
+/*RU-START*/
+window.UA_RU = {
+    hero_kicker: `Гайд для плейтеста`,
+    hero_lead: `Установите игру, запустите её, обновляйте и переключайте версии. Выберите своё устройство и следуйте только своей части.`,
+    pick_deck_small: `и ПК с Linux`,
+    pick_win_small: `64-бит`,
+    prompt_h: `Выберите устройство выше`,
+    prompt_sub: `Шаги различаются для Mac, Steam Deck / Linux и Windows.`,
+    same_version: `<b>Все, кто играет вместе, должны быть на одной и той же версии.</b> Если версии отличаются, хост отклонит подключение и сообщит, какие версии не совпали.`,
+    mac_h: `Mac (Apple Silicon)`,
+    mac_sub: `M1 или новее. Mac с процессорами Intel не поддерживаются.`,
+    mac_c1_h: `1 · Первая установка`,
+    mac_s1: `Откройте <b>Терминал</b>: нажмите <b>⌘ Пробел</b>, введите <i>Терминал</i> (или <i>Terminal</i>) и нажмите Enter.`,
+    mac_s2: `Вставьте эту строку и нажмите Enter:`,
+    mac_s3: `Появится небольшое меню. Нажмите <b>Enter</b>. Игра установится и запустится.`,
+    term_cap_mac: `Терминал — так это будет выглядеть`,
+    mac_dbl_sum: `Хотите запустить двойным щелчком, а не через Терминал?`,
+    mac_dbl_p: `Скачайте <code>UnknownAdventure-installer-macos.zip</code> со <a href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">страницы последнего релиза</a>, распакуйте и откройте <code>UnknownAdventure.command</code>. В первый раз macOS попросит подтверждение, потому что файл скачан из браузера: нажмите на него правой кнопкой, выберите <b>Открыть</b>, затем ещё раз <b>Открыть</b>.`,
+    mac_c2_h: `2 · Запуск в следующие разы`,
+    mac_c2_p: `Установщик создал лаунчер <b>Unknown Adventure</b> в папке <code>Программы</code> (в вашей домашней папке). Нажмите <b>⌘ Пробел</b>, введите название и нажмите Enter. Откроется окно Терминала с меню; снова нажмите <b>Enter</b>. Установщик проверит, есть ли новая версия, при необходимости установит её и запустит игру.`,
+    illus_label: `Иллюстрация`,
+    spot_app: `— Программа`,
+    c3_h: `3 · Обновление и смена версии`,
+    mac_c3_p1: `Откройте лаунчер и пользуйтесь меню:`,
+    k_enter: `обновиться до последней версии и играть`,
+    k_p: `играть в установленную версию, не проверяя обновления`,
+    k_o: `поставить другую версию: меню покажет доступные, затем введите нужную, например <code>0.1.0</code>`,
+    k_r: `вернуться к предыдущей версии`,
+    k_sq: `показать, где установлена игра / выйти`,
+    mac_c3_p2: `Или прямо из Терминала, без меню:`,
+    mac_cap: `Две последние версии остаются на диске, поэтому вернуться назад можно мгновенно.`,
+    deck_h: `Steam Deck и ПК с Linux`,
+    deck_sub: `64-бит, Intel/AMD. На Deck устанавливайте в режиме рабочего стола; после этого запускать можно и из игрового режима.`,
+    deck_c1_h: `1 · Первая установка (режим рабочего стола)`,
+    deck_s1: `Нажмите кнопку <b>Steam</b>, выберите <b>Питание</b>, затем <b>Перейти на рабочий стол</b> (<i>Switch to Desktop</i>).`,
+    deck_s2: `Откройте <b>Konsole</b> (терминал) из меню приложений.`,
+    deck_s3: `Вставьте эту строку и нажмите Enter:`,
+    deck_s4: `Нажмите <b>Enter</b> в меню. Игра установится и запустится.`,
+    term_cap_deck: `Konsole — так это будет выглядеть`,
+    deck_menu_p: `Установщик добавит пункт <b>Unknown Adventure</b> в меню приложений (раздел «Игры»).`,
+    deck_c2_h: `2 · Запуск из игрового режима`,
+    deck_c2_p: `Добавьте лаунчер в Steam один раз, в режиме рабочего стола. После этого выбор игры в игровом режиме сам обновит её, если вышла новая версия, и запустит. Если Deck не в сети или обновление не удалось, просто запустится уже установленная версия.`,
+    deck_optA_h: `Вариант A — простой`,
+    deck_optA_p: `В <b>Steam</b>: <b>Игры → Добавить стороннюю игру в мою библиотеку</b> (<i>Games → Add a Non-Steam Game to My Library</i>), отметьте <b>Unknown Adventure</b> и нажмите <b>Добавить выбранные программы</b> (<i>Add Selected Programs</i>).`,
+    dlg_title_a: `Добавить стороннюю игру`,
+    dlg_btn_add: `Добавить выбранные программы`,
+    deck_optB_h: `Вариант B — если её нет в списке`,
+    deck_b1: `В Steam выберите <b>Игры → Добавить стороннюю игру в мою библиотеку → Обзор</b> (<i>Browse</i>).`,
+    deck_b2: `Выберите тип файлов <b>Все файлы</b> (<i>All Files</i>), нажмите <b>Ctrl+H</b>, чтобы показать скрытые папки, откройте <code>.local/share/UnknownAdventure</code> и выберите <code>UnknownAdventure.command</code>. Нажмите <b>Добавить выбранные программы</b>.`,
+    deck_b3: `В библиотеке нажмите правой кнопкой на новую запись, выберите <b>Свойства</b> (<i>Properties</i>), а в поле <b>Параметры запуска</b> (<i>Launch Options</i>) впишите <code>play</code>.`,
+    dlg_title_b: `Свойства — UnknownAdventure.command`,
+    dlg_launch: `ПАРАМЕТРЫ ЗАПУСКА`,
+    deck_back: `Затем нажмите <b>Вернуться в игровой режим</b> на рабочем столе. Игра появится в библиотеке в разделе <b>Сторонние</b> (<i>Non-Steam</i>).`,
+    deck_tip: `Не включайте для неё Steam Play / Proton: версия для Linux запускается нативно.`,
+    deck_note: `Тестовое меню сейчас управляется мышью. Если стики не двигают указатель, используйте сенсорный экран или трекпады либо выберите для игры раскладку <b>Клавиатура (WASD) и мышь</b>.`,
+    deck_c3_p1: `В режиме рабочего стола откройте Konsole и запустите лаунчер; меню такое же, как на Mac (<code>o</code> — установить конкретную версию, <code>r</code> — вернуться на одну версию назад, <code>p</code> — играть без обновления):`,
+    deck_c3_p2: `Или напрямую:`,
+    deck_warn: `Ярлык в игровом режиме всегда переходит на самую новую версию. Если для теста вы выбрали старую версию, запускайте игру из режима рабочего стола (пункт в меню приложений или меню выше, клавиша <code>p</code>).`,
+    win_h: `Windows`,
+    win_sub: `64-бит. Установщика для Windows пока нет: сборку нужно скачать и распаковать.`,
+    win_c1_h: `Установка`,
+    win_s1: `Откройте <a href="https://github.com/espac1o/unknown-adventure-builds/releases/latest">страницу последнего релиза</a>.`,
+    win_s2: `В разделе <b>Assets</b> скачайте <code>UnknownAdventure-&lt;версия&gt;-windows.zip</code>.`,
+    win_s3: `Распакуйте архив в любую папку и запустите <code>UnknownAdventure.exe</code>.`,
+    win_warn: `Windows может показать <b>«Windows защитила ваш компьютер»</b>, потому что игра пока не подписана. Это тестовая сборка: если вы доверяете источнику, нажмите <b>Подробнее</b>, затем <b>Выполнить в любом случае</b>.`,
+    win_c2_h: `Обновление и смена версии`,
+    win_c2_p: `Скачайте архив нужной версии со <a href="https://github.com/espac1o/unknown-adventure-builds/releases">страницы релизов</a> (выберите версию и откройте список <b>Assets</b>), распакуйте его в <b>новую папку</b> и запускайте оттуда. Несколько версий могут лежать рядом; старые папки удаляйте сами.`,
+    tog_h: `Игра вместе`,
+    tog_sub: `На стартовом экране есть кнопки <b>Solo</b>, <b>Host</b>, <b>Server</b> и <b>Join</b>. Верхняя кнопка показывает состояние подключения: нажмите на неё, чтобы скрыть или показать панель.`,
+    fig1_alt: `Стартовый экран: кнопка состояния, кнопки Solo, Host и Server, поле Join со списком недавних хостов и блок с управлением внизу слева`,
+    fig2_alt: `Режим хоста: список ваших адресов с кнопкой Copy у каждого и кнопка, которая узнаёт публичный адрес`,
+    fig1_cap: `<b>Стартовый экран</b> (нажмите, чтобы увеличить). Solo — игра в одиночку, Host — запуск сессии, Server — сессия без собственного игрока. Введите адрес и нажмите Join; недавние хосты показаны под полем.`,
+    fig2_cap: `<b>Хост.</b> Ваши адреса показаны с кнопкой Copy у каждого (здесь — примеры адресов). Верхняя кнопка состояния скрывает или показывает эту панель.`,
+    tog_host: `<b>Host:</b> игра показывает ваши адреса под кнопками, у каждого есть кнопка <b>Copy</b>: адрес <b>VPN / виртуальной сети</b> (лучше всего для друзей из разных мест), адрес <b>локальной сети</b> (для тех, кто в том же Wi-Fi или сети) и кнопка, которая узнаёт ваш <b>публичный</b> адрес. Отправьте друзьям один из них. Ваш компьютер должен принимать входящий <b>UDP</b>-трафик на порту <b>7770</b>; разрешите его, если спросит брандмауэр. Публичный адрес работает, только если роутер пробрасывает этот порт на ваш компьютер.`,
+    tog_server: `<b>Server:</b> запускает сессию без собственного игрока (для свободного компьютера). Тогда все, включая вас, подключаются через Join.`,
+    tog_join: `<b>Join:</b> введите IP-адрес хоста и нажмите <b>Join</b>. Три последних хоста, к которым вы подключались, показаны под полем: нажмите на один, чтобы подставить его в поле, а затем сами нажмите Join; <b>x</b> удаляет запись.`,
+    tog_controls: `<b>На арене:</b> блок внизу слева всегда показывает управление и состояние шара и импульса. Двигайтесь клавишами <code>WASD</code> или левым стиком. <code>E</code> (на геймпаде <b>A</b>) — взять золотой шар или бросить его: нужно стоять рядом, и держать шар может только один игрок; брошенный шар ложится на землю перед вами. <code>Q</code> (левый бампер) — импульс с перезарядкой в одну секунду. Попробуйте схватить шар одновременно с другом: достанется ровно одному из вас.`,
+    tog_fail: `Если подключиться не удалось, вы увидите причину (сообщения в игре на английском):`,
+    err1: `у вас и у хоста разные версии; одному из вас нужно сменить версию`,
+    err2: `неверный адрес, хост не запущен или мешает брандмауэр`,
+    err3: `порт уже занят (возможно, запущена ещё одна копия игры)`,
+    where_h: `Где что лежит`,
+    where_inst: `Установленная игра`,
+    where_launch: `Лаунчер`,
+    where_win_folder: `папка, в которую вы распаковали архив`,
+    where_p: `Сохранения и настройки игра хранит отдельно, поэтому обновление и смена версии их не затрагивают. <b>Чтобы удалить игру,</b> удалите папку с установленной игрой и лаунчер.`,
+    help_h: `Если что-то пошло не так`,
+    h1_s: `«needs an Apple Silicon Mac» (нужен Mac на Apple Silicon)`,
+    h1_p: `Сборка для Mac не работает на компьютерах Mac с процессором Intel.`,
+    h2_s: `«Could not reach the update server» (нет связи с сервером обновлений)`,
+    h2_p: `Вы не в сети или GitHub недоступен. Установщик запустит уже установленную версию.`,
+    h3_s: `Загрузка не удалась или была отклонена`,
+    h3_p: `Ничего не изменилось; установленная версия по-прежнему работает. Попробуйте ещё раз.`,
+    h4_s: `Mac спрашивает про входящие сетевые подключения`,
+    h4_p: `Это брандмауэр спрашивает про создание сессии. Разрешите, если хотите, чтобы к вам могли подключаться.`,
+    h5_s: `Что-то другое: пришлите лог игры`,
+    h5_p: `Пришлите файл лога и коротко опишите, что вы делали:`,
+  
+    page_title: `Unknown Adventure — руководство пользователя`};
+/*RU-END*/
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>
