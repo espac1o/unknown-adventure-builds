@@ -10,6 +10,7 @@
     nav_guide: `Руководство`,
     nav_mechanics: `Механики`,
     nav_versions: `Версии`,
+    nav_playtest: `Плейтест`,
     copy: `Копировать`,
     latest_label: `Последняя версия:`,
     footer: `Сборки:`

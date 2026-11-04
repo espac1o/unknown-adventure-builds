@@ -16,6 +16,7 @@
     <a href="user_guide.html" data-nav data-i18n="nav_guide">User guide</a>
     <a href="mechanics.html" data-nav data-i18n="nav_mechanics">Mechanics</a>
     <a href="versions.html" data-nav data-i18n="nav_versions">Versions</a>
+    <a href="playtest.html" data-nav data-i18n="nav_playtest">Playtest</a>
   </div>
   <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ru" aria-pressed="false">RU</button></div>
 </div></nav>
@@ -172,7 +173,7 @@ Launching Unknown Adventure 0.1.0</pre></div>
       </div>
       <p data-i18n="deck_back">Then use <b>Return to Gaming Mode</b> on the desktop. The game is in your library under <b>Non-Steam</b>.</p>
       <div class="tip"><p data-i18n="deck_tip">Don't enable a Steam Play / Proton compatibility tool for it: the Linux build runs natively.</p></div>
-      <div class="note"><p data-i18n="deck_note">The current test menu is clicked with a mouse. If the sticks don't move the pointer, use the touchscreen or trackpads, or pick the <b>Keyboard (WASD) and Mouse</b> controller layout for the game.</p></div>
+      <div class="note"><p data-i18n="deck_note">The menus work with the controller: move with the stick or the d-pad, press <b>A</b>, go back with <b>B</b>, and open the pause menu in the game with <b>Start</b>. The touchscreen and trackpads work as a mouse too.</p></div>
     </div>
 
     <div class="card">
@@ -214,10 +215,10 @@ Launching Unknown Adventure 0.1.0</pre></div>
   <!-- ===================== PLAYING TOGETHER ===================== -->
   <section id="together" data-device="mac deck windows">
     <h2 data-i18n="tog_h">Playing together</h2>
-    <p data-i18n="tog_sub" class="sub">The start screen has three buttons: <b>Solo</b>, <b>Host</b> and <b>Join</b>.</p>
+    <p data-i18n="tog_sub" class="sub">The start screen has <b>Solo</b>, <b>Host a game</b> and <b>Join a game</b> (and <b>Dedicated server</b> for a spare computer).</p>
     <div class="shots">
-      <figure><img data-i18n-alt="fig1_alt" alt="The start screen: the state button, Solo, Host and Server buttons, a Join field with the list of recent hosts, and the controls box at the bottom left" src="assets/img/menu_open.jpg"><figcaption data-i18n="fig1_cap"><b>Start screen</b> (click to enlarge). Solo plays alone, Host starts a session, Server runs one with no player of its own. Type an address and press Join; your recent hosts are listed below the field.</figcaption></figure>
-      <figure><img data-i18n-alt="fig2_alt" alt="Hosting: the list of your addresses with a Copy button each, and the button that looks up your public address" src="assets/img/hosting_panel.jpg"><figcaption data-i18n="fig2_cap"><b>Hosting.</b> Your addresses are listed with a Copy button each (these are example addresses). The state button at the top hides or shows this panel.</figcaption></figure>
+      <figure><img data-i18n-alt="fig1_alt" alt="The main menu: Solo, Host a game, Join a game, Dedicated server and Quit" src="assets/img/main_menu.jpg"><figcaption data-i18n="fig1_cap"><b>Main menu</b> (click to enlarge). Solo plays alone, Host a game starts a session, Join a game connects to one. In <b>Join a game</b> type an address and press Join; your three recent hosts are listed below the field.</figcaption></figure>
+      <figure><img data-i18n-alt="fig2_alt" alt="Invite friends: the list of your addresses, each a button that copies it, and the button that looks up your public address" src="assets/img/invite.jpg"><figcaption data-i18n="fig2_cap"><b>Invite friends</b> (Esc or Start opens the pause menu, then Invite friends). Press an address to copy it (these are example addresses). The status bar at the bottom right shows that you are hosting and how many players are in.</figcaption></figure>
     </div>
     <div class="card">
       <ul>
@@ -225,7 +226,7 @@ Launching Unknown Adventure 0.1.0</pre></div>
         <li data-i18n="tog_join"><b>Join:</b> type the host's IP address and press <b>Join</b>. The last three hosts you joined are listed under the field: click one to put it in the field, then press Join yourself; the <b>x</b> deletes an entry.</li>
         <li data-i18n="tog_server"><b>Server:</b> runs a session with no player of its own (for a spare computer). Everyone, including you, then uses Join.</li>
       </ul>
-            <p data-i18n="tog_controls"><b>In the arena:</b> the box at the bottom left always shows the controls and the state of the ball and the pulse. Move with <code>WASD</code> or the left stick. <code>E</code> (gamepad <b>A</b>) picks up or drops the gold ball: you must be close, and only one player can hold it; a dropped ball lands on the ground in front of you. <code>Q</code> (left shoulder) fires a pulse, with a one-second cooldown. Try grabbing the ball at the same moment as a friend: exactly one of you gets it.</p>
+            <p data-i18n="tog_controls"><b>In the game:</b> the game is the <b>Courier Route</b>. Pick up the gold items from the yellow spots, carry them across the red hazard strips (they hurt) and hand all three in on the green pad. Move with <code>WASD</code> or the left stick. Press <code>E</code> (gamepad <b>A</b>) next to an item to pick it up, and again at the green pad to hand it in; press it anywhere else to drop what you carry. The target you would act on pulses, with a hint such as <b>[E] Pick up</b> next to it. You carry one item at a time, and it hangs in front of you. <code>Q</code> (left shoulder) fires a pulse. <code>Esc</code> (gamepad <b>Start</b>) opens the pause menu: resume, restart the run (host only), invite friends, leave. The objective, the run timer, your health and the controls are on screen; the status bar at the bottom right shows your connection.</p>
       <p data-i18n="tog_fail">If joining fails you'll see why:</p>
       <table>
         <tr><td>Incompatible game version</td><td data-i18n="err1">you and the host are on different versions; one of you must change version</td></tr>
@@ -326,7 +327,7 @@ window.UA_RU = {
     dlg_launch: `ПАРАМЕТРЫ ЗАПУСКА`,
     deck_back: `Затем нажмите <b>Вернуться в игровой режим</b> на рабочем столе. Игра появится в библиотеке в разделе <b>Сторонние</b> (<i>Non-Steam</i>).`,
     deck_tip: `Не включайте для неё Steam Play / Proton: версия для Linux запускается нативно.`,
-    deck_note: `Тестовое меню сейчас управляется мышью. Если стики не двигают указатель, используйте сенсорный экран или трекпады либо выберите для игры раскладку <b>Клавиатура (WASD) и мышь</b>.`,
+    deck_note: `Меню управляется геймпадом: двигайтесь стиком или крестовиной, нажимайте <b>A</b>, назад — <b>B</b>, а в игре меню паузы открывается кнопкой <b>Start</b>. Сенсорный экран и трекпады тоже работают как мышь.`,
     deck_c3_p1: `В режиме рабочего стола откройте Konsole и запустите лаунчер; меню такое же, как на Mac (<code>o</code> — установить конкретную версию, <code>r</code> — вернуться на одну версию назад, <code>p</code> — играть без обновления):`,
     deck_c3_p2: `Или напрямую:`,
     deck_warn: `Ярлык в игровом режиме всегда переходит на самую новую версию. Если для теста вы выбрали старую версию, запускайте игру из режима рабочего стола (пункт в меню приложений или меню выше, клавиша <code>p</code>).`,
@@ -343,14 +344,14 @@ window.UA_RU = {
     win_c2_p: `Нажмите клавишу <b>Windows</b> и введите <b>Unknown Adventure</b>. Лаунчер проверит новую версию, установит её, если она есть, и запустит игру; без интернета он запустит ту версию, что у вас есть. В меню <b>o</b> ставит другую версию, а <b>r</b> возвращает предыдущую.`,
     tog_h: `Игра вместе`,
     tog_sub: `На стартовом экране есть кнопки <b>Solo</b>, <b>Host</b>, <b>Server</b> и <b>Join</b>. Верхняя кнопка показывает состояние подключения: нажмите на неё, чтобы скрыть или показать панель.`,
-    fig1_alt: `Стартовый экран: кнопка состояния, кнопки Solo, Host и Server, поле Join со списком недавних хостов и блок с управлением внизу слева`,
-    fig2_alt: `Режим хоста: список ваших адресов с кнопкой Copy у каждого и кнопка, которая узнаёт публичный адрес`,
-    fig1_cap: `<b>Стартовый экран</b> (нажмите, чтобы увеличить). Solo — игра в одиночку, Host — запуск сессии, Server — сессия без собственного игрока. Введите адрес и нажмите Join; недавние хосты показаны под полем.`,
-    fig2_cap: `<b>Хост.</b> Ваши адреса показаны с кнопкой Copy у каждого (здесь — примеры адресов). Верхняя кнопка состояния скрывает или показывает эту панель.`,
+    fig1_alt: `Главное меню: Solo, Host a game, Join a game, Dedicated server и Quit`,
+    fig2_alt: `Приглашение друзей: список ваших адресов, каждый — кнопка, которая его копирует, и кнопка, узнающая публичный адрес`,
+    fig1_cap: `<b>Главное меню</b> (нажмите, чтобы увеличить). Solo — игра в одиночку, Host a game — запуск сессии, Join a game — подключение к чужой. В <b>Join a game</b> введите адрес и нажмите Join; три последних хоста показаны под полем.`,
+    fig2_cap: `<b>Приглашение друзей</b> (Esc или Start открывает меню паузы, затем Invite friends). Нажмите на адрес, чтобы скопировать его (здесь — примеры адресов). Строка состояния внизу справа показывает, что вы хостите и сколько игроков в сессии.`,
     tog_host: `<b>Host:</b> игра показывает ваши адреса под кнопками, у каждого есть кнопка <b>Copy</b>: адрес <b>VPN / виртуальной сети</b> (лучше всего для друзей из разных мест), адрес <b>локальной сети</b> (для тех, кто в том же Wi-Fi или сети) и кнопка, которая узнаёт ваш <b>публичный</b> адрес. Отправьте друзьям один из них. Ваш компьютер должен принимать входящий <b>UDP</b>-трафик на порту <b>7770</b>; разрешите его, если спросит брандмауэр. Публичный адрес работает, только если роутер пробрасывает этот порт на ваш компьютер.`,
     tog_server: `<b>Server:</b> запускает сессию без собственного игрока (для свободного компьютера). Тогда все, включая вас, подключаются через Join.`,
     tog_join: `<b>Join:</b> введите IP-адрес хоста и нажмите <b>Join</b>. Три последних хоста, к которым вы подключались, показаны под полем: нажмите на один, чтобы подставить его в поле, а затем сами нажмите Join; <b>x</b> удаляет запись.`,
-    tog_controls: `<b>На арене:</b> блок внизу слева всегда показывает управление и состояние шара и импульса. Двигайтесь клавишами <code>WASD</code> или левым стиком. <code>E</code> (на геймпаде <b>A</b>) — взять золотой шар или бросить его: нужно стоять рядом, и держать шар может только один игрок; брошенный шар ложится на землю перед вами. <code>Q</code> (левый бампер) — импульс с перезарядкой в одну секунду. Попробуйте схватить шар одновременно с другом: достанется ровно одному из вас.`,
+    tog_controls: `<b>В игре:</b> игра — это <b>Courier Route</b>. Берите золотые предметы с жёлтых площадок, несите их через красные полосы (они ранят) и сдайте все три на зелёной площадке. Двигайтесь клавишами <code>WASD</code> или левым стиком. Нажмите <code>E</code> (на геймпаде <b>A</b>) рядом с предметом, чтобы взять его, и снова на зелёной площадке, чтобы сдать; в другом месте это бросает то, что вы несёте. Цель, с которой вы будете взаимодействовать, пульсирует, а рядом появляется подсказка, например <b>[E] Pick up</b>. Вы несёте один предмет за раз, он висит перед вами. <code>Q</code> (левый бампер) — импульс. <code>Esc</code> (на геймпаде <b>Start</b>) открывает меню паузы: продолжить, начать забег заново (только хост), пригласить друзей, выйти. На экране видны цель, таймер забега, ваше здоровье и подсказки по управлению; строка состояния внизу справа показывает подключение.`,
     tog_fail: `Если подключиться не удалось, вы увидите причину (сообщения в игре на английском):`,
     err1: `у вас и у хоста разные версии; одному из вас нужно сменить версию`,
     err2: `неверный адрес, хост не запущен или мешает брандмауэр`,

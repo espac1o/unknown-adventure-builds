@@ -165,6 +165,7 @@ a.pagecard h3 { margin: 0 0 4px; color: var(--accent); }
 a.pagecard p { margin: 0; color: var(--muted); font-size: .95rem; }
 .chip { display: inline-block; border-radius: 999px; padding: 1px 10px; font-size: .78rem; font-weight: 700; letter-spacing: .02em; }
 .chip.now { background: color-mix(in srgb, var(--ok) 20%, var(--surface)); color: var(--ok); }
+.chip.done { background: color-mix(in srgb, var(--muted) 22%, var(--surface)); color: var(--text); }
 .chip.next { background: var(--accent-soft); color: var(--accent); }
 .chip.later { background: color-mix(in srgb, var(--muted) 15%, var(--surface)); color: var(--muted); }
 .partlist { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; padding: 0; list-style: none; margin: 14px 0; }
